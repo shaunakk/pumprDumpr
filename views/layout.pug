@@ -2,6 +2,17 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    link(rel='stylesheet' href='/stylesheets/uikit.min.css')
+  body      
+    nav.uk-navbar-container(uk-navbar="")
+      .uk-navbar-left
+        a.uk-navbar-item.uk-logo(href="" ) pumprdumpr
+        ul.uk-navbar-nav
+          li.uk-active 
+            a(href="") Home
+          li.uk-parent 
+            a(href="/newstock") New stock
     block content
+    
+
+
