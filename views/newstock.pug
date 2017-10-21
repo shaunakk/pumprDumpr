@@ -1,9 +1,15 @@
 extends layout
 
 block content
-    input(type="text" id="typeahead-input")
+    form.uk-search.uk-search-default(action="/stocksearch" method="POST")
+        input.uk-search-input.uk-margin-left.uk-margin-top(type="text" id="typeahead-input" placeholder="Search..." name="stock")
 
-    h1= result
+    .result
+    //- - for(let name in names)
+    //-     .uk-card.uk-card-default.uk-card-body(class='.uk-width-1-2@m')
+    //-         h3.uk-card-title=names[name].name
+    //-         p Company name: #{names[name].companyName}
+    //-         p Market Cap: #{names[name].marketCap}
+    //-     br
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-    script(src="js/FuzzySearch.min.js")
     script(src="js/newstock.js")
