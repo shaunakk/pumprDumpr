@@ -1,5 +1,19 @@
 var names;
 var input = document.getElementById('typeahead-input');
+var stockCard = document.getElementsByClassName('stock');
+
+function swalHandler(timeout) {
+    swal("Connect with Robinhood", {
+        content: {
+            element: "img",
+            attributes: {
+                src: "images/robinhood.png",
+                href:"http://google.com"
+            }
+        }
+    })
+    if(timeout == true) setTimeout(() => { location.href="/" }, 3000)
+}
 
 function format(options) {
     options = options || {};
@@ -269,7 +283,7 @@ $(document).ready(function() {
                     names.push(company);
                 }
                 for(var j = 0; j < names.length; j++) {
-                    $('.result').append("<div class='uk-card uk-card-default uk-card-body'>" + "<h3 class='uk-card-title'>" + names[j].name + '</h3>' + '<p> Company name: ' + names[j].companyName + '</p>' + '<p> Market cap: ' + names[j].marketCap + '</p>' + '</div>');
+                    $('.result').append("<a id='stock' onclick='swalHandler(true)'>" + "<div class='uk-card uk-card-default uk-card-body'>" + "<h3 class='uk-card-title'>" + names[j].name + '</h3>' + '<p> Company name: ' + names[j].companyName + '</p>' + '<p> Market cap: ' + names[j].marketCap + '</p>' + '</div>' + "</a>");
                 }
             })
         }
